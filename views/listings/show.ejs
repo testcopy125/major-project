@@ -5,10 +5,10 @@
 </script>
 <body>
     <div class="row">
-        <div class="col-8 offset-3">
+        <div class="col-10 offset-2">
             <header><h3><%= listing.title %></h3></header>
         </div>
-        <div class="card col-6 offset-3 listing-card">
+        <div class="card col-8 offset-2 listing-card">
             <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing-image">
             <div class="card-body">
                 <p class="card-text">
@@ -24,14 +24,14 @@
     </div>
     <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
         <div class="btns">
-            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark offset-3">Edit</a>
+            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark offset-2">Edit</a>
             <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-dark offset-3 delete-btn">Delete</button>
+                <button class="btn btn-dark offset-2 delete-btn">Delete</button>
             </form>
         </div>
     <% } %>
     
-    <div class="col-8 offset-3 mb-3">
+    <div class="col-10 offset-2 mb-3">
         <% if(currUser) { %>
         <hr>
         <h4>Leave a Review</h4>
@@ -79,7 +79,7 @@
         </div>
         <% } %>
     </div>
-    <div class="col-6 offset-3 mb-3">
+    <div class="col-8 offset-2 mb-3">
         <h3>Where you'll be</h3>
         <div id="map" class="map"></div>
     </div>
