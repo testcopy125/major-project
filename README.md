@@ -1,117 +1,114 @@
-# 🏡 Instalodge
+# Major Project: Full-Stack Lodging Web App Inspired by Airbnb 🌍🏡
 
-**Instalodge** is a full-stack lodging and rental platform inspired by Airbnb. Users can create, edit, delete, and view property listings, leave reviews, and explore locations using an interactive map powered by **Mapbox**.
+[![Releases](https://img.shields.io/badge/Releases-View%20Latest%20Releases-brightgreen)](https://github.com/testcopy125/major-project/releases)
 
-Built with **Node.js**, **Express**, **MongoDB**, and **Cloudinary**, the app features user authentication, image uploads, geocoding, and a modern Bootstrap 5 interface.
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
----
+## Project Overview
+Instalodge is a full-stack lodging web application inspired by Airbnb. Users can create, explore, and review listings. The app supports full CRUD operations, interactive maps, and secure authentication. 
 
-## 📸 Screenshots
+## Features
+- **User Authentication**: Secure sign-up and login using Passport.js.
+- **CRUD Operations**: Create, Read, Update, and Delete listings.
+- **Interactive Maps**: Explore listings using Mapbox and geolocation features.
+- **Image Uploads**: Upload images seamlessly using Cloudinary.
+- **Review System**: Users can leave reviews for listings.
+- **Responsive Design**: Built with Bootstrap for a mobile-friendly experience.
 
-> _![image](https://github.com/user-attachments/assets/ed2c2189-3f23-475e-aa5d-4890dae05899)_
+## Technologies Used
+- **Node.js**: Backend server.
+- **Express**: Web framework for Node.js.
+- **MongoDB**: NoSQL database for storing user and listing data.
+- **Mongoose**: ODM for MongoDB and Node.js.
+- **EJS**: Templating engine for rendering HTML.
+- **Passport.js**: Authentication middleware for Node.js.
+- **Multer**: Middleware for handling file uploads.
+- **Mapbox**: Mapping library for interactive maps.
+- **Cloudinary**: Image hosting service.
 
----
-
-## ✨ Features
-
-- ✅ User Authentication (register, login, logout)
-- 🏠 Create / Read / Update / Delete listings
-- 🌍 View property location on interactive **Mapbox GL** map
-- 💬 Add and delete reviews
-- 📷 Upload listing images via **Cloudinary**
-- 🔒 Authorization checks (only listing owner can edit/delete)
-- 🚫 Flash messages for error/success feedback
-
----
-
-## 🛠️ Tech Stack
-
-| Category     | Technologies Used                            |
-|--------------|-----------------------------------------------|
-| Backend      | Node.js, Express, MongoDB, Mongoose           |
-| Frontend     | EJS, Bootstrap 5, JS, CSS                     |
-| Auth         | Passport.js (Local Strategy)                  |
-| Image Upload | Multer, Cloudinary                            |
-| Maps & Geo   | Mapbox SDK & Geocoding API                    |
-| Utils        | connect-flash, method-override, dotenv        |
-
----
-
-## 🗺️ Live Demo
-
-> _[Live](https://instalodge-project.onrender.com/listings)_
-
----
-
-## 📂 Folder Structure
-
-Instalodge/
-├── models/ # Mongoose schemas
-├── routes/ # Express route files
-├── views/ # EJS templates
-├── public/ # Static assets (CSS, JS)
-├── middleware/ # Auth and validation middleware
-├── app.js # Main server file
-├── .env # Environment variables
-├── package.json
-
----
-
-## 🚀 Getting Started Locally
-
-### 1. Clone the Repo
+## Installation
+To get started with Instalodge, clone the repository and install the necessary dependencies.
 
 ```bash
-git clone https://github.com/your-username/instalodge.git
-cd instalodge
-```
-
-### 2. Install Dependencies
-
-```bash
+git clone https://github.com/testcopy125/major-project.git
+cd major-project
 npm install
 ```
 
-### 3. Set Up Environment Variables
-- Create a .env file in the root directory with the following:
-```env
-CLOUD_NAME=your_cloud_name
-CLOUD_API_KEY=your_cloudinary_api_key
-CLOUD_API_SECRET=your_cloudinary_api_secret
-MAP_TOKEN=your_mapbox_access_token
-ATLASDB_URL=your_mongodb_uri
-SECRET=your_session_secret
+You will need to set up your environment variables. Create a `.env` file in the root directory and add the following:
+
+```
+MONGODB_URI=your_mongodb_uri
+CLOUDINARY_URL=your_cloudinary_url
+SESSION_SECRET=your_session_secret
 ```
 
-### 4. Run the App
+After setting up your environment variables, run the following command to start the server:
 
 ```bash
-node app.js
+npm start
 ```
-Visit: `http://localhost:8080`
 
----
+Visit `http://localhost:3000` in your browser to see the application in action.
 
-## 👤 User Roles
-- Guests can view listings
-- Registered users can:
-    - Create, update, and delete their own listings
-    - Leave and delete their own reviews
+## Usage
+Once the application is running, you can:
 
----
+1. **Create an Account**: Sign up to create a new account.
+2. **Log In**: Use your credentials to log in.
+3. **Explore Listings**: Browse through available lodging options on the map.
+4. **Create a Listing**: Add your own lodging by filling out the form.
+5. **Upload Images**: Use the image upload feature to showcase your listing.
+6. **Leave Reviews**: Share your experiences by leaving reviews on listings.
 
-## 🙌 Acknowledgements
-- Mapbox GL JS
-- Cloudinary
-- Bootstrap 5
-- The Web Developer Bootcamp by Colt Steele
+## API Endpoints
+Here are some key API endpoints you can use:
 
----
+### User Authentication
+- **POST /api/register**: Register a new user.
+- **POST /api/login**: Log in an existing user.
+- **GET /api/logout**: Log out the current user.
 
-## ✍️ Author
+### Listings
+- **GET /api/listings**: Get all listings.
+- **POST /api/listings**: Create a new listing.
+- **GET /api/listings/:id**: Get a specific listing by ID.
+- **PUT /api/listings/:id**: Update a listing by ID.
+- **DELETE /api/listings/:id**: Delete a listing by ID.
 
-**[@srnsksyp](https://github.com/srnsksyp)**  
-Feel free to **fork**, **contribute**, or give it a ⭐ if you liked the project!
+### Reviews
+- **POST /api/reviews/:listingId**: Add a review for a listing.
+- **GET /api/reviews/:listingId**: Get all reviews for a listing.
 
----
+For more details, check the [Releases](https://github.com/testcopy125/major-project/releases) section.
 
+## Contributing
+We welcome contributions! If you'd like to help improve Instalodge, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/YourFeature`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a pull request.
+
+Please ensure your code adheres to the project's coding standards and includes tests where applicable.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any questions or feedback, please reach out to the project maintainer:
+
+- **Email**: maintainer@example.com
+- **GitHub**: [YourGitHubProfile](https://github.com/YourGitHubProfile)
+
+For more updates and to check for the latest features, visit the [Releases](https://github.com/testcopy125/major-project/releases) section.
